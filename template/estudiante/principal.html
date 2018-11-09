@@ -1,0 +1,72 @@
+{% extends "master.html" %}
+{% block contenido%}
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Mali|Spicy+Rice" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+
+    <title></title>
+</head>
+
+<body background="https://fotorecurso.com/images/2014/10/23/fondo-bokeh-azul-rosas-fotorecurso.jpg">
+
+
+<!--{% load staticfiles %} -->
+<!--<img src="{% static 'img/logo.png' %}">-->
+
+<a href="crear">Nuevo</a>
+<table class="table table-striped">
+ <thead ><h2 style="font-family: 'Spicy Rice', cursive;" align="center">LISTA DE CLIENTES</h2>
+
+  <tr style="font-family: 'Spicy Rice', cursive;">
+    <td>Cedula</td>
+    <td>#Matricula</td>
+    <td>Carrera</td>
+    <td>Nombre</td>
+    <td>Apellido</td>
+    <td>Edad</td>
+    <td>Genero</td>
+
+    <td>Modificar</td>
+    <td>Eliminar</td>
+  </tr>
+
+ </thead>
+ <tbody>
+   {% for c in lista%}
+  <tr style="font-family: 'Mali', cursive;">
+    <td>{{c.cedula}}</td>
+    <td>{{c.numero}}</td>
+    <td>{{c.carrera}}</td>
+    <td>{{c.nombres}}</td>
+    <td>{{c.apellidos}}</td>
+    <td>{{c.edad}}</td>
+    <td>{{c.genero}}</td>
+
+
+
+    <td>  <a  href="modificar?cedula={{c.cedula}}">Modificar</a>
+    </td>
+
+     <td>  <a  href="eliminar?cedula={{c.cedula}}">Eliminar</a>
+    </td>
+
+
+
+  </tr>
+  {% endfor%}
+ </tbody>
+</table>
+</body>
+</html>
+
+
+{% endblock %}

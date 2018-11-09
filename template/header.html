@@ -1,0 +1,29 @@
+Header<!--mensaje -->
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+   {% if user.is_authenticated %}
+       <p>Bienvenido, <b>{{user.username}}</b> | <a href="{% url 'logout' %}">Cerrar sesion</a></p>
+
+   {% endif %}
+
+   {% for msg in messages %}
+   <div class="alert alert-{{msg.level_tag}}" role="alert">
+
+       {{msg.message}}
+
+   </div>
+
+   {% endfor %}
+
+</body>
+</html>

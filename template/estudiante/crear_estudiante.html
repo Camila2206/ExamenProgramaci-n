@@ -1,0 +1,29 @@
+{% extends "master.html" %}
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+{{mensaje}}  <br>
+
+{% block contenido %}
+
+<div class="well">
+    <form method="post">
+    {{f.as_p}} <br>
+    {% csrf_token %}
+    <input type="submit" value="Guardar">
+    </form>
+</div>
+
+
+{%  endblock %}
+
+
+</body>
+</html>
